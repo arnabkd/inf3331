@@ -1,0 +1,5 @@
+#1.1 Become familiar with electronic Python documentation
+import random
+print random.uniform (-1 , 1);
+
+
