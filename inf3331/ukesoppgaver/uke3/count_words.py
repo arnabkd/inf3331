@@ -14,8 +14,8 @@ if (argc < 3 or argc > 5):
     printusage()
     sys.exit()
 
-insensitive = ("-i" in sys.argv)
-boundaries = ("-b" in sys.argv) 
+insensitive = 1 if ("-i" in sys.argv) else 0
+boundaries = 1 if ("-b" in sys.argv) else 0
 
 filename = sys.argv[argc-2]
 search_string = sys.argv[argc-1]
@@ -25,15 +25,16 @@ sum = 0
 
 for line in ifile:
     if(insensitive):
-        line = line.lower()
-        search_string = search_string.lower()
-    if(not boundaries):    
-        sum += line.count(search_string)
+	line = line.lower()
+	search_string = search_string.lower()
+    if(boundaries):
+	for word in line.split():
+	    i = 1 if (word.strip('.') == search_string) else 0
+            sum += i
     else:
-        for word in line.split():
-            if (word == search_string):
-                sum += 1
-    
+	sum += line.count(search_string)
+
+
 
 res = "Number of occurances of string '%s' in '%s' : %d" %(search_string , filename , sum)
 print res
