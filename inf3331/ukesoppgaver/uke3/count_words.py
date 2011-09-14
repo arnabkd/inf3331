@@ -8,18 +8,33 @@ def printusage():
     print "To keep word-boundaries, add -b before textfile"
 
 #Checking that arguments are correct
-#Assuming that users put run options before filename and search-string
-# argv = ['count_words.py' , .. , 'filename' 'search-string']
+#Assuming that users insert arguments in the correct order
+# argv = ['count_words.py' , args.. , 'filename' 'search-string']
 if (argc < 3 or argc > 5):
     printusage()
     sys.exit()
 
-insensitive = 1 if ("-i" in sys.argv) else 0
-boundaries = 1 if ("-b" in sys.argv) else 0
+insensitive = ("-i" in sys.argv)
+boundaries = ("-b" in sys.argv) 
 
 filename = sys.argv[argc-2]
 search_string = sys.argv[argc-1]
 
-out = "Looking for '%s'  in '%s'" %(search_string , filename)
-print out
+ifile = open (filename, 'r')
+sum = 0
 
+for line in ifile:
+    if(insensitive):
+        line = line.lower()
+        search_string = search_string.lower()
+    if(not boundaries):    
+        sum += line.count(search_string)
+    else:
+        for word in line.split():
+            if (word == search_string):
+                sum += 1
+    
+
+res = "Number of occurances of string '%s' in '%s' : %d" %(search_string , filename , sum)
+print res
+exit()
