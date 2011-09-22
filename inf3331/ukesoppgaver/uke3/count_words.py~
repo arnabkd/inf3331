@@ -25,14 +25,14 @@ sum = 0
 
 for line in ifile:
     if(insensitive):
-		line = line.lower()
-		search_string = search_string.lower()
+	line = line.lower()
+	search_string = search_string.lower()
     if(boundaries):
-		for word in line.split():
-	    	i = 1 if (word.strip('.') == search_string) else 0
-	    	sum += i
+	for word in line.split():
+	    i = 1 if (word.strip('.') == search_string) else 0
+	    sum += i
     else:
-		sum += line.count(search_string)
+	sum += line.count(search_string)
 
 
 

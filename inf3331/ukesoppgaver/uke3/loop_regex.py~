@@ -20,13 +20,4 @@ print re.search(r3, loop2).groups()
 print re.search(r3, loop1).groups()
  
 
-#Kjoreeksempel
-#arnabkd@spes ~/Desktop/uni/inf3331/inf3331/ukesoppgaver/uke3 $ python loop_regex.py 
-#Two regexes that fail
-#('0', '1', '2')
-#('0', '12', '')
-#('0', '1', '2, 4')
-#('0', '12, 4', '')
-#Output from working regex: 
-#('0', '12', '4')
-#('0', '12', '')
+

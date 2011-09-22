@@ -13,9 +13,3 @@ upper = float(groups[1][c.groupindex['number']]) #2 changed to 1
 #"%.5e" for scientific notation after 5 decimals
 print "%.5e" %lower
 print "%.5e" %upper
-
-
-#Kjoreeksempel
-#arnabkd@spes ~/Desktop/uni/inf3331/inf3331/ukesoppgaver/uke3 $ python findallerror.py 
-#3.58652e+05
-#6.00000e+09
