@@ -18,21 +18,40 @@ for line in ins:
 #A insertion-sort modified to take in the matches list and sort it :
 #Every element's key is the element in position 1
 #Example element in matchlist : ['CPU-time:', '9.92', 'g77', '-O2', 'if-test', 'inside', 'the', 'main', 'loop']
-def insertionsort( matchlist ):
-    for i in range (len (matchlist)):
-        tmp = matchlist[i]
-        j = i
+# def insertionsort( matchlist ):
+    # for i in range (len (matchlist)):
+        # tmp = matchlist[i]
+        # j = i
         
-        while (j > 0 and float(matchlist[j-1][1]) > float(tmp[1])):
-            matchlist[j] = matchlist[j-1]
-            j = j - 1
-        matchlist[j] = tmp
-    return matchlist
+        # while (j > 0 and float(matchlist[j-1][1]) > float(tmp[1])):
+            # matchlist[j] = matchlist[j-1]
+            # j = j - 1
+        # matchlist[j] = tmp
+    # return matchlist
     
 
 
-matches = insertionsort(matches)
+# matches = insertionsort(matches)
 
+ # Gnome sort
+ # @param tab the array to be sorted
+ # @returns tab the sorted array
+ # 
+ def gnomesort( tab):        
+	i = 1
+    while(i < len(tab)):
+		if(i==0 or float(tab[i][1]) >= float (tab[i-1][1]))
+			i = i + 1
+        else
+            tmp = tab[i]
+            tab[i] = tab[i-1]
+            i = i - 1
+            tab[i] = tmp
+                
+        
+        return tab
+
+matches = gnomesort(matches)
 #All elements look like this (sorted of course)
 #CPU-time: 252.40   .. .. .. ..
 for match in matches:
