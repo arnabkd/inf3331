@@ -1,6 +1,9 @@
-#
-# Perl-style join with a delimiter and args can be an arbitary mixture of strings, lists, tuples
-#
+"""
+ Perl-style join with a delimiter and args can be an arbitary mixture of strings, lists, tuples
+ @param delim
+ @param args
+ @returns list
+"""
 def join(delim, *args):    
     list = []
     for arg in args:
