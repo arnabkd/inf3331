@@ -1,3 +1,4 @@
+#Arnab Kumar Datta - Week 4
 #!/usr/bin/env python
 import sys, re; from math import *
 teststring = ""
@@ -20,5 +21,10 @@ try:
 except :
 	print "something went wrong (arguments were not typed properly)"
 
-
-
+#$python xygenerated.py 0:360,90 cos(x)*cos(x)+sin(x)*sin(x)
+#The above line gives the following content in generated.txt: 
+#x: 0  y = cos(x)*cos(x)+sin(x)*sin(x) = 1.000000
+#x: 90  y = cos(x)*cos(x)+sin(x)*sin(x) = 1.000000
+#x: 180  y = cos(x)*cos(x)+sin(x)*sin(x) = 1.000000
+#x: 270  y = cos(x)*cos(x)+sin(x)*sin(x) = 1.000000
+#x: 360  y = cos(x)*cos(x)+sin(x)*sin(x) = 1.000000
