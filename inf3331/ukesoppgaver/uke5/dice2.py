@@ -49,10 +49,10 @@ try:
 except:
 	print "No arguments given, simulating dice throws until p/n equals 0.306. This process will be repeated 10 times."
 	sum = 0
-	for i in range (100):
+	for i in range (10):
 		x = smart_simulate()
 		print "Number of dice throws required in run #%d is %d" %(i,x)
 		sum += x
-		average = float(sum) /100
-	print "After 100 iterations : average number of dice-throws required to reach p/n = 0.306  is %f" %(average)  
+		average = float(sum) /10
+	print "After 10 iterations : average number of dice-throws required to reach p/n = 0.306  is %f" %(average)  
     
