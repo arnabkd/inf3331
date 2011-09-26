@@ -1,3 +1,6 @@
+#Arnab Kumar Datta - Week 4
+#!/usr/bin/env python
+
 import sys,re
 
 try:
@@ -7,8 +10,7 @@ except :
 
 
 def gettime():
-    #regx = r'(.*):(.*):(.*):\s(.*):(.*):(.*)'
-    #myregex = r'Date/Time    : (\d+):(\d+):(\d+) (\d+):(\d+):(\d+)'
+
     rex2 = 'Date/Time    : (\d+):(\d+):(\d+)\s(\d+):(\d+):(\d+)\n'
     for line in filename:
         try:
@@ -23,3 +25,8 @@ def prefix(originalname, date_time_info):
         return "invalid input"
 
 print prefix("img_4938.jpg", gettime())
+
+
+#Runtime example
+#arnabkd@defiance ~/Desktop/uni/inf3331/inf3331/ukesoppgaver/uke4 $ python jpegrename.py sample.txt 
+#2002_05_19__18_10_03__img_4938.jpg

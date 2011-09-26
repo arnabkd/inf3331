@@ -1,3 +1,5 @@
+#Arnab Kumar Datta - Week 4
+#!/usr/bin/env python
 """
 Perl-style join with a delimiter and args can be an arbitary mixture of strings, lists, tuples
 @param delim
@@ -14,6 +16,7 @@ def join(delim, *args):
 	elif (type(arg) == str):
 	    list.append(arg)
 	    list.append(delim)
+	list.pop() #removes the last delimiter
     return list
 
 
@@ -21,11 +24,13 @@ list1 = ['s1','s2','s3']
 tuple1 = ('s4', 's5')
 
 ex1 = join(' ', 't1', 't2', list1, tuple1, 't3', 't4')
-ex2 = join('  #  ', list1, 't0')
+ex2 = join('  #	 ', list1, 't0')
 print ex1
 print ex2
 
-#Runtime example - printed out ex1 and ex2. This is a list, so it does not look exactly like the task specifies
+
+#Runtime
 #arnabkd@defiance ~/Desktop/uni/inf3331/inf3331/ukesoppgaver/uke4 $ python join.py
-#['t1', ' ', 't2', ' ', 's1', ' ', 's2', ' ', 's3', ' ', 's4', ' ', 's5', ' ', 't3', ' ', 't4', ' ']
-#['s1', '  #  ', 's2', '  #  ', 's3', '	 #  ', 't0', '	#  ']
+#['t1', 't2', 's1', ' ', 's2', ' ', 's3', 's4', ' ', 's5', 't3', 't4']
+#['s1', '  #\t ', 's2', '  #\t ', 's3', 't0']
+
