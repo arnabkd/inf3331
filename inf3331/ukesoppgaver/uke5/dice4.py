@@ -1,5 +1,5 @@
-#Arnab Kumar Datta Task 5.4
-#Simulate hazard game and determine if you should play this game
+#Arnab Kumar Datta  
+#Task 5.4 : Simulate hazard game and determine if you should play this game
 import random,sys
 
 def throw_dice():
