@@ -1,4 +1,4 @@
-#Arnab Kumar Datta  
+#Arnab Kumar Datta  (arnabkd)
 #Task 5.4 : Simulate hazard game and determine if you should play this game
 import random,sys
 
@@ -21,3 +21,7 @@ if (balance >= 1):
     print "Yes you should play this game."
 else :
     print "No, this game will make you lose money."
+
+#Runtime example
+#arnabkd@skjold ~/Desktop/uni/inf3331/inf3331/ukesoppgaver/uke5 $ python dice4.py 
+#Yes you should play this game.

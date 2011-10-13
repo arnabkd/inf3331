@@ -29,7 +29,7 @@ def simulate(n):
     sum_desirable_res = 0
     for x in range(n):
 		res = [throw_dice() , throw_dice()]
-		print "Simulation #%d: " %(x) , res , "- desirable"
+		print "Simulation #%d: " %(x) , res
 		if(6 in res):
 			sum_desirable_res += 1		
     print "For  %d simulations, we got %d favorable results (at least 1 six when throwing 2 dice)" %(n, sum_desirable_res)
@@ -55,4 +55,21 @@ except:
 		sum += x
 		average = float(sum) /10
 	print "After 10 iterations : average number of dice-throws required to reach p/n = 0.306  is %f" %(average)  
+
+
+#Runtime example
+#arnabkd@skjold ~/Desktop/uni/inf3331/inf3331/ukesoppgaver/uke5 $ python dice2.py   
+#No arguments given, simulating dice throws until p/n equals 0.306. This process will be repeated 10 times.
+#Number of dice throws required in run #0 is 98
+#Number of dice throws required in run #1 is 98
+#Number of dice throws required in run #2 is 160
+#Number of dice throws required in run #3 is 264
+#Number of dice throws required in run #4 is 1042
+#Number of dice throws required in run #5 is 62
+#Number of dice throws required in run #6 is 427
+#Number of dice throws required in run #7 is 124
+#Number of dice throws required in run #8 is 215
+#Number of dice throws required in run #9 is 238
+#After 10 iterations : average number of dice-throws required to reach p/n = 0.306  is 272.800000
+
     
