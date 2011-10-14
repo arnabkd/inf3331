@@ -35,30 +35,64 @@ class Vec3D(object):
 		z = vec1[0] * vec2[1] - vec2[0] * vec1[1]		
 		return Vec3D(x,y,z)
 		
-	#override + (vector addition)
+	#override + (vector+scalar addition)
 	def __add__(self,other):	
-		res = map(lambda x,y: x+y, self.attributes , other.attributes)		
+		if(isinstance(other, Vec3D)):
+			res = map(lambda x,y: x+y, self.attributes , other.attributes)	
+		else:
+			res = map(lambda x: x+other, self.attributes)
 		return Vec3D(res[0], res[1], res[2])
 	
-	#override - (vector subtraction)
+	#override - (vector/scalar subtraction)
 	def __sub__(self,other):
-		res = map(lambda x,y: x-y, self.attributes , other.attributes)		
+		if(isinstance(other, Vec3D)):
+			res = map(lambda x,y: x-y, self.attributes , other.attributes)	
+		else:
+			res = map(lambda x: x - other, self.attributes)
 		return Vec3D(res[0], res[1], res[2])
 		
 	def __mul__(self,other):
-		res = map(lambda x,y: x*y, self.attributes, other.attributes)
+		if(isinstance(other, Vec3D)):
+			res = map(lambda x,y: x*y, self.attributes, other.attributes)
+		else:
+			res = map(lambda x: x * other, self.attributes)
 		return sum(res)
 		
-#Runtime code		
-u = Vec3D(1,0,0)
-v = Vec3D(0,1,0)
+	#override float + Vec3D - will be called if float does not have __add__(y) with y being an instance of Vec3D 
+	def __radd__(self , other):
+		return self + other
+	
+	#override float-Vec3D - will be called if float does not have __sub__(y) with y being an instance of Vec3D 
+	def __rsub__(self,other):
+		return self - other
+	
+	#override float-Vec3D - will be called if float does not have __mul__(y) with y being an instance of Vec3D 
+	def __rmul__(self,other):
+		return self * other
+	
+	
+	#override vec3d / float 
+	def __div__(self,other):
+		return map(lambda x: x / other, self.attributes)
+		
+	
+#Runtime code
+u = Vec3D(1, 0, 0)
+v = Vec3D(0, -0.2, 8)		
+a = 1.2
 
-print str(u)
-print repr(u)
-print "Eucledian norm" , u.len()
-print "subscripting -> u[1]", u[1]
-v[2] = 2.5
-print "subscripting with assignment -> v[2]=",v[2]
-print "cross product u**v",u**v
-print "vector addition: u+v",u+v
-print "dot product:", u*v
+print "vector addition", u+v
+print "scalar and vector addition", a+v
+print "vector and scalar addition", v+a
+
+print "vector and scalar subtraction", v-a
+print "scalar and vector subtraction", a-v
+
+print "vector and scalar multiplication", v*a
+print "scalar and vector multiplication", a*v
+
+print "vector by scalar division", v/a
+
+
+
+
