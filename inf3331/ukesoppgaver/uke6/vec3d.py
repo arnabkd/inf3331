@@ -5,9 +5,11 @@ class Vec3D(object):
 	def __init__(self, x,y,z):
 		self.attributes = [x,y,z]	
 	
+	#pretty print
 	def __str__(self):
 		return str(self.attributes)
-			
+	
+	#override repr
 	def __repr__(self):
 		classname = self.__class__.__name__
 		return '%s%s' %(classname, repr(self.attributes))
@@ -25,7 +27,7 @@ class Vec3D(object):
 	def __setitem__(self, index, value):		
 		self.attributes[index] = value
 	
-	#override pow (cross product)
+	#override ** (cross product)
 	def __pow__(self,other):
 		vec1 = self.attributes;	vec2 = other.attributes
 		x = vec1[1] * vec2[2] - vec2[1] * vec1[2]
