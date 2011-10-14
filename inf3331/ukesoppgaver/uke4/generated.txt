@@ -1,0 +1,5 @@
+x: 0  y = cos(x)*cos(x)+sin(x)*sin(x) = 1.000000
+x: 90  y = cos(x)*cos(x)+sin(x)*sin(x) = 1.000000
+x: 180  y = cos(x)*cos(x)+sin(x)*sin(x) = 1.000000
+x: 270  y = cos(x)*cos(x)+sin(x)*sin(x) = 1.000000
+x: 360  y = cos(x)*cos(x)+sin(x)*sin(x) = 1.000000
