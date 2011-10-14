@@ -19,6 +19,7 @@ def sqr(x):
 	return x*x
 	
 print trapz(f_1 , 0, 2, 200) #outputs 4.01005025126
+#integral (1+x) = (1/2)*x(x+2) -> 1/2*2(2+2) - 1/2*0(0+2) = 1(4) - 0 = 4 
 
 print trapz(sqr, 0, 3, 10000) #outputs 9.000 
 #integral (x^2) = (x^3)/3 -> ((3^3)/3) - ((0^3)/3) = 9 - 0 = 9
