@@ -1,19 +1,24 @@
+#Task 6.3 arnabkd (Arnab Kumar Datta)
 import numpy
 
 def initial_condition(x):	
-	print str(type(x))
-	print str(type(x)) == 'type<\'numpy.ndarray\'>'
-	if(type(x) == '<type \'numpy.ndarray\'>'):
-		print "yay"
+	if(str(type(x)) == '<type \'numpy.ndarray\'>'):
 		y = x.copy()
-		print y
 		y[0:] = 3.0
-		print y
 		return y
 	else:
 		return 3.0
-	
+
+
+#Runtime code	
 p1 =  [0, 1.2, 4, -9.1, 5, 8 ]
 a = numpy.array(p1)
 
-initial_condition(a)
+print initial_condition(a)
+print initial_condition(5.0)
+
+#Runtime output
+#arnabkd@bounty ~/Desktop/uni/inf3331/inf3331/ukesoppgaver/uke6 $ python vectorize_function.py 
+#[ 3.  3.  3.  3.  3.  3.]
+#3.0
+

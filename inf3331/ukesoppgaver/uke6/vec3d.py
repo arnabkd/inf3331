@@ -1,3 +1,4 @@
+#Task 6.1 arnabkd (Arnab Kumar Datta)
 import math
 	
 class Vec3D(object):
@@ -48,6 +49,9 @@ class Vec3D(object):
 	def __mul__(self,other):
 		res = map(lambda x,y: x*y, self.attributes, other.attributes)
 		return sum(res)
+
+
+
 		
 #Runtime code		
 u = Vec3D(1,0,0)
@@ -62,3 +66,14 @@ print "subscripting with assignment -> v[2]=",v[2]
 print "cross product u**v",u**v
 print "vector addition: u+v",u+v
 print "dot product:", u*v
+
+#Runtime output
+#arnabkd@bounty ~/Desktop/uni/inf3331/inf3331/ukesoppgaver/uke6 $ python vec3d.py 
+#[1, 0, 0]
+#Vec3D[1, 0, 0]
+#Eucledian norm 1.0
+#subscripting -> u[1] 0
+#subscripting with assignment -> v[2]= 2.5
+#cross product u**v [0.0, -2.5, 1]
+#vector addition: u+v [1, 1, 2.5]
+#dot product: 0.0

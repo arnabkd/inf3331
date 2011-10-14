@@ -1,3 +1,4 @@
+#Task 6.2 arnabkd (Arnab Kumar Datta)
 import math
 	
 class Vec3D(object):
@@ -94,5 +95,13 @@ print "scalar and vector multiplication", a*v
 print "vector by scalar division", v/a
 
 
-
-
+#Runtime output
+#arnabkd@bounty ~/Desktop/uni/inf3331/inf3331/ukesoppgaver/uke6 $ python Vec3d_ext.py 
+#vector addition [1, -0.20000000000000001, 8]
+#scalar and vector addition [1.2, 1.0, 9.1999999999999993]
+#vector and scalar addition [1.2, 1.0, 9.1999999999999993]
+#vector and scalar subtraction [-1.2, -1.3999999999999999, 6.7999999999999998]
+#scalar and vector subtraction [-1.2, -1.3999999999999999, 6.7999999999999998]
+#vector and scalar multiplication 9.36
+#scalar and vector multiplication 9.36
+#vector by scalar division [0.0, -0.16666666666666669, 6.666666666666667]

@@ -1,49 +1,46 @@
-import subprocess,sys
-# import sys
+#Task 6.3 arnabkd (Arnab Kumar Datta)
+import sys
+try:
+    boo = sys.argv[1].split('.py')[0]
+    boo = __import__(boo)
+    
+    outfilename = sys.argv[2]
+    output =  boo.foo(sys.argv[3], sys.argv[4])
 
- # def automate_output(src,  arglist):
-	 # proc = subprocess.Popen(['python', src, arglist], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-	 # print(proc.communicate()[0])
+    src = open(sys.argv[1], 'r')
+    out = open(outfilename, 'w')
+    for line in src:
+	out.write(line)
+    src.close()
+    out.write('\n')
+    
+    out.write('\"\"\" \n')
+    out.write('Run time example:\n')
 
-# def print_to_file (src, outfile, arglist):
-	# print "printing to file %s" %(outfile)
-	# out = open(outfile, 'w')
-	# s = open(src, 'r')
-	
-	# for line in s:
-		# out.write(line)
-	# s.close()
-	
-	# out.write(" \"\"\"\n Run time example: \n")	
-	# out.write(automate(src, arglist))
-	# out.write(" \"\"\"\n")
-	# out.close()
-	
+    out.write('python'+ sys.argv[1] + ' '+ sys.argv[3] + ' ' + sys.argv[4]+ '\n')
 
-# try: 
-	# src = sys.argv[1]
-	# outfile = sys.argv[2]
-	# arglist = sys.argv[3:]
-	# automate(src, arglist)
-	# print_to_file(src,outfile,arglist)	
-# except:
-	# print "error"
-	# print "usage : python automate_runtime.py scriptname outfile args"
+    out.write(str(output) + '\n')
+    
+    out.write('\"\"\"')
+    out.close()
+except:
+    print "error"
 
 
+#Runtime example
+#arnabkd@bounty ~/Desktop/uni/inf3331/inf3331/ukesoppgaver/uke6 $ python test2.py bar.py assign#ment.txt 100 150
+#arnabkd@bounty ~/Desktop/uni/inf3331/inf3331/ukesoppgaver/uke6 $ more assignment.txt 
+#!/usr/bin/env python
+
+#def foo(arg1, arg2):
+#        return int(arg1) + int(arg2)
 
 
-
-src = 'bar.py'
-args = ['2' , '3']
-
-def cmd_output(args, **kwds):
-  kwds.setdefault("stdout", subprocess.PIPE)
-  kwds.setdefault("stderr", subprocess.STDOUT)
-  p = subprocess.Popen(args, **kwds)
-  return p.communicate()[0]
-
-
-print cmd_output(src, list(args))
-# proc = subprocess.Popen(['python', src,  list(args)], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-# print proc.communicate()[0]
+#if __name__ == "__main__":
+#    import sys
+#    print foo(sys.argv[1], sys.argv[2])
+#""" 
+#Run time example:
+#pythonbar.py 100 150
+#250
+#"""

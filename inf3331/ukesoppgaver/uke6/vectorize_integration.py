@@ -1,3 +1,4 @@
+#Task 6.4 arnabkd (Arnab Kumar Datta)
 #!/usr/bin/env python
 from math import *
 
@@ -17,9 +18,15 @@ def f_1(x):
 
 def sqr(x):
 	return x*x
-	
-print trapz(f_1 , 0, 2, 200) #outputs 4.01005025126
+
+#Runtime code
+print "trapz(f_1,0,2,200)",trapz(f_1 , 0, 2, 200) #outputs 4.01005025126
 #integral (1+x) = (1/2)*x(x+2) -> 1/2*2(2+2) - 1/2*0(0+2) = 1(4) - 0 = 4 
 
-print trapz(sqr, 0, 3, 10000) #outputs 9.000 
+print "trapz(sqr, 0, 3, 10000)",trapz(sqr, 0, 3, 10000) #outputs 9.000 
 #integral (x^2) = (x^3)/3 -> ((3^3)/3) - ((0^3)/3) = 9 - 0 = 9
+
+#Runtime output
+#arnabkd@bounty ~/Desktop/uni/inf3331/inf3331/ukesoppgaver/uke6 $ python vectorize_integration.py 
+#trapz(f_1,0,2,200) 4.01005025126
+#trapz(sqr, 0, 3, 10000) 9.00015006001
