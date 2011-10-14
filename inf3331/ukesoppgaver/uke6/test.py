@@ -1,4 +1,4 @@
-import math, numpy
+import math
 	
 class Vec3D(object):
 
@@ -34,7 +34,7 @@ class Vec3D(object):
 		return Vec3D(x,y,z)
 		
 	#override + (vector addition)
-	def __add__(self,other):
+	def __add__(self,other):	
 		res = map(lambda x,y: x+y, self.attributes , other.attributes)		
 		return Vec3D(res[0], res[1], res[2])
 	
@@ -43,30 +43,20 @@ class Vec3D(object):
 		res = map(lambda x,y: x-y, self.attributes , other.attributes)		
 		return Vec3D(res[0], res[1], res[2])
 		
+	def __mul__(self,other):
+		res = map(lambda x,y: x*y, self.attributes, other.attributes)
+		return sum(res)
 		
+#Runtime code		
 u = Vec3D(1,0,0)
 v = Vec3D(0,1,0)
 
 print str(u)
-
 print repr(u)
-
 print "Eucledian norm" , u.len()
-
 print "subscripting -> u[1]", u[1]
 v[2] = 2.5
-
 print "subscripting with assignment -> v[2]=",v[2]
-
 print "cross product u**v",u**v
-
 print "vector addition: u+v",u+v
-
-
-  # public Vector3D CrossProduct()
-        # {
-            # return new Vector3D((vec1.Y * vec2.Z) - (vec2.Y * vec1.Z),
-                                # (vec1.Z * vec2.X) - (vec2.Z * vec1.X),
-                                # (vec1.X * vec2.Y) - (vec2.X * vec1.Y));
-                                 
-        # }
+print "dot product:", u*v
