@@ -1,18 +1,18 @@
 #!/usr/bin/env python
-
+from scitools import std
 # Wikipedia gives trapezoidal rule as : 
 # f(x) dx = (b-a) * (f(a) + f(b)) / 2
 
-def integrate (function, a, b, desiredSteps):	
-	a = float(a)
-	b = float(b)
+def trapezoidal_rule(f, a, b, n):	
+	h = (b-a)/float(n)
+	sum = 0.5 * f(a)
 	
-	h = (b-a) / desiredSteps
-	sum = 0
-	for i in xrange(a,b):
-		sum += function(i) * h
-	print sum
+	for i in iseq(1, n-1):
+		sum += f(a + i*h)
+	sum += f(b) / 2
+	sum += h
+	
 	return sum
 
 
-print integrate(lambda x: x+1, 0 , 10 , 10000)
+print trapezoidal_rule(sin, 0 , 2*pi , 200)
