@@ -1,9 +1,9 @@
 import subprocess,sys
 # import sys
 
-# def automate_output(src,  arglist):
-	# proc = subprocess.Popen(['python', src,  arglist], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-	# proc.communicate()[0]
+ # def automate_output(src,  arglist):
+	 # proc = subprocess.Popen(['python', src, arglist], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+	 # print(proc.communicate()[0])
 
 # def print_to_file (src, outfile, arglist):
 	# print "printing to file %s" %(outfile)
@@ -30,7 +30,20 @@ import subprocess,sys
 	# print "error"
 	# print "usage : python automate_runtime.py scriptname outfile args"
 
-args = ('2' , '3')
 
-proc = subprocess.Popen(['python', 'bar.py',  '2' , '3'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-print proc.communicate()[0]
+
+
+
+src = 'bar.py'
+args = ['2' , '3']
+
+def cmd_output(args, **kwds):
+  kwds.setdefault("stdout", subprocess.PIPE)
+  kwds.setdefault("stderr", subprocess.STDOUT)
+  p = subprocess.Popen(args, **kwds)
+  return p.communicate()[0]
+
+
+print cmd_output(src, list(args))
+# proc = subprocess.Popen(['python', src,  list(args)], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+# print proc.communicate()[0]
