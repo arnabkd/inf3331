@@ -1,4 +1,5 @@
-import math, random
+#Task 8.5 Rock paper scissors (arnabkd)
+import random
 players = ['Tie','Player','Computer']
 scores = [0,0,0]
 choices = {'r':0 , 'p':1 , 's':2}
@@ -6,10 +7,10 @@ inv_choices = {0:'rock', 1:'paper', 2:'scissors'}
 
 def main():
     try:
-        margin = int(raw_input("Enter desired margin of victory: "))
+        post = int(raw_input("Enter number of points required to win: "))
     except: 
-        print "margin of victory must be given as an int";exit(-1)
-    while (math.fabs(scores[1]-scores[2]) < margin):
+        print "Points required to win must be given as an int";exit(-1)
+    while (scores[1] < post and scores[2] < post):
         play()
     print "Final score: %s %d \t %s %d"%(players[1],scores[1], players[2] , scores[2])
 
