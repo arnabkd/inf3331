@@ -1,0 +1,2 @@
+8.1 : bruk funksjonen inner i numpy arrays
+8.4 : rename dx til _dx for eksempel

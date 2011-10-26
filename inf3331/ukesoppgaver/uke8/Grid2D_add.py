@@ -14,6 +14,7 @@ class Grid2D:
 
         # store for convenience:
         self.dx = dx;  self.dy = dy  
+        self._dx = dx; self._dy = dy
         self.nx = self.xcoor.size;  self.ny = self.ycoor.size
 
         # make two-dim. versions of the coordinate arrays:
