@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python
 
 from numpy import *
@@ -9,22 +10,50 @@ class Grid2D:
                  xmin=0, xmax=1, dx=0.5,
                  ymin=0, ymax=1, dy=0.5):
         # coordinates in each space direction:
+        self.__xmin = xmin;self.__xmax = xmax
+        self.__ymin = ymin;self.__ymax = ymax
+        self.__dx = dx; self.__dy = dy
+
         self.xcoor = seq(xmin, xmax, dx)
         self.ycoor = seq(ymin, ymax, dy)
-
+        
         # store for convenience:
-        self.dx = dx;  self.dy = dy  
-        self._dx = dx; self._dy = dy
+        #self.dx = dx;  self.dy = dy  
         self.nx = self.xcoor.size;  self.ny = self.ycoor.size
 
         # make two-dim. versions of the coordinate arrays:
         # (needed for vectorized function evaluations)
         self.xcoorv = self.xcoor[:, newaxis]
         self.ycoorv = self.ycoor[newaxis, :]
+    
+
+    def get_dx(self):
+        return self.__dx
+    dx = property(get_dx)
+
+    def get_dy(self):
+        return self.__dy
+    dy = property(get_dy)
+
+    def get_xmax(self):
+        return self.__xmax
+    xmax = property(get_xmax)
+
+    def get_xmin(self):
+        return self.__xmin
+    xmin = property(get_xmin)
+
+    def get_ymin(self):
+        return self.__ymin
+    ymax = property(get_ymin)
+
+    def get_ymax(self):
+        return self.__ymax
+    ymin = property(get_ymax)
 
     def __repr__(self):
         return str(self.xcoor) + str(self.ycoor)
-
+    
     def __eq__(self,other):
         return self.__repr__() == other.__repr__()
 
@@ -32,10 +61,6 @@ class Grid2D:
         """Evaluate a vectorized function f at each grid point."""
         return f(self.xcoorv, self.ycoorv)
 
-    def __getitem__(self,ij):
-        i,j = ij
-        return self.xcoor[i] , self.ycoor[j]
-    
     def __call__(self, f):
         a = f(self.xcoorv, self.ycoorv)
         return a
@@ -91,6 +116,7 @@ class Grid2D:
                 y = self.ycoor.item(i)
                 a.itemset(i,j, f(x, y))
         return a
+
 
 
 def plot_easyviz(grid, func_values):
@@ -205,7 +231,9 @@ def _run():
         exec 'timing1(%d)' % n
     else:
         exec func + '()'
-    
+
+
+
 if __name__ == '__main__':
     _run()
 

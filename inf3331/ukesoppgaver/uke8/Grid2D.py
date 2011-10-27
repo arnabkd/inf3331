@@ -1,3 +1,4 @@
+#Task 8.3 - Arnab Kumar Datta (arnabkd)
 #!/usr/bin/env python
 
 from numpy import *
@@ -203,3 +204,21 @@ if __name__ == '__main__':
     _run()
 
 
+#Runtime example
+#arnabkd@starrenburg ~/Desktop/uni/inf3331/inf3331/ukesoppgaver/uke8 $ python
+#Python 2.5.2 (r252:60911, Jul 22 2008, 12:44:54) 
+#[GCC 4.1.2 20071124 (Red Hat 4.1.2-42)] on linux2
+#Type "help", "copyright", "credits" or "license" for more information.
+#>>> from Grid2D import Grid2D
+#>>> s = Grid2D()
+#>>> print s
+#
+#x: [ 0.   0.5  1. ]
+#y: [ 0.   0.5  1. ]
+#>>> s[0,1] = 2,5
+#Traceback (most recent call last):
+#  File "<stdin>", line 1, in <module>
+#AttributeError: Grid2D instance has no attribute '__setitem__'
+#>>> x,y = s[0,1]      
+#>>> print x,y
+#0.0 0.5

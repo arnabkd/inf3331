@@ -1,4 +1,4 @@
-#Task 8.5 Rock paper scissors (arnabkd)
+#Task 8.5 - Arnab Kumar Datta (arnabkd)
 import random
 players = ['Tie','Player','Computer']
 scores = [0,0,0]
@@ -23,3 +23,19 @@ def play():
     
 if __name__ == '__main__':
     main()
+
+
+#Runtime example
+#arnabkd@starrenburg ~/Desktop/uni/inf3331/inf3331/ukesoppgaver/uke8 $ python roshambo.py 
+#Enter number of points required to win: 3
+#Enter r for rock, p for paper or s for scissors : r
+#Player(0 points) chose rock, Computer(0 points) chose rock.     Winner: Tie
+#Enter r for rock, p for paper or s for scissors : r
+#Player(0 points) chose rock, Computer(0 points) chose rock.     Winner: Tie
+#Enter r for rock, p for paper or s for scissors : p
+#Player(0 points) chose paper, Computer(0 points) chose scissors.        Winner: Computer
+#Enter r for rock, p for paper or s for scissors : r
+#Player(0 points) chose rock, Computer(1 points) chose paper.    Winner: Computer
+#Enter r for rock, p for paper or s for scissors : r
+#Player(0 points) chose rock, Computer(2 points) chose paper.    Winner: Computer
+#Final score: Player 0    Computer 3
