@@ -1,11 +1,10 @@
-
 #!/usr/bin/env python
 
 from numpy import *
 from scitools.numpyutils import seq
 import time, sys
 
-class Grid2D:
+class Grid2D(object):
     def __init__(self,
                  xmin=0, xmax=1, dx=0.5,
                  ymin=0, ymax=1, dy=0.5):
@@ -236,5 +235,25 @@ def _run():
 
 if __name__ == '__main__':
     _run()
+
+#arnabkd@slesvig ~/Desktop/uni/inf3331/inf3331/ukesoppgaver/uke8 $ python
+#Python 2.5.2 (r252:60911, Jul 22 2008, 12:44:54) 
+#[GCC 4.1.2 20071124 (Red Hat 4.1.2-42)] on linux2
+#Type "help", "copyright", "credits" or "license" for more information.
+#>>> from Grid2D_add import Grid2D
+#>>> s = Grid2D()
+#>>> s
+#[ 0.   0.5  1. ][ 0.   0.5  1. ]
+#>>> x = Grid2D()
+#>>> s == x
+#True
+#>>> s.dx 
+#0.5
+#>>> s.dx = 4
+#Traceback (most recent call last):
+#  File "<stdin>", line 1, in <module>
+#AttributeError: can't set attribute
+#>>> s.dx
+#0.5
 
 

@@ -11,7 +11,7 @@ print "b"
 print b
 print "Matrix * Vector product of A and b is : "
 print inner(A,b)
-
+print dot(A,b) == inner(A,b)
 #Runtime example
 #arnabkd@starrenburg ~/Desktop/uni/inf3331/inf3331/ukesoppgaver/uke8 $ python m#atvec.py 
 #A

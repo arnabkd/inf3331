@@ -17,7 +17,7 @@ def main():
 def play():
     player = choices[raw_input("Enter r for rock, p for paper or s for scissors : ")]
     computer = random.randint(0,2)
-    winner = (3 + player - computer) % 3 #for player = X, computer = Y, this gives 0 if it is a tie, 1 if player wins, and 2 if computer wins
+    winner = (3 + player - computer) % 3 
     print "%s(%d points) chose %s, %s(%d points) chose %s.\tWinner: %s"%(players[1], scores[1] ,inv_choices[player], players[2],scores[2] ,inv_choices[computer], players[winner])
     scores[winner] += 1
     
