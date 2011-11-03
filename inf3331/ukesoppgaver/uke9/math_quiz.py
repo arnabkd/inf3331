@@ -5,7 +5,7 @@ ops = {func['add'] : '+' , func['mul'] : '*', func['sub'] : '-'}
 messages = ['Please ask your math teacher for help!','You need more practice.',\
                 'Well done!']
 
-def play(level, op = random.choice(func.values())):
+def play(level,op):
     operand1 = random.randint(1,level);    operand2 = random.randint(1,level)
     ans = op(operand1, operand2)
     input = int(raw_input(('Enter your answer for %d %s %d : ')\
@@ -29,10 +29,10 @@ def main():
 
     points = 0
     
-    if type != "mix":
+    if 'mix' not in type:
         for i in range (rounds) : points += play(level,func[type])
     else :
-        for i in range (rounds) : points += play(level)
+        for i in range (rounds) : points += play(level, random.choice(func.values()))
 
     feedback(points,rounds)
 
