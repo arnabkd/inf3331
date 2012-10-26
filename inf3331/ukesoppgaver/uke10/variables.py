@@ -12,6 +12,7 @@
 #Q: Given a variable, x, what is the command to get python to print out the type
 #   of x?
 #A: print type(x)
+test
 
 #Q: What is a keyword?
 #A: Words that are reserved by a programming language, and has a particular
